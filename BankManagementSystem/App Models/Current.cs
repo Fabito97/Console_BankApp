@@ -16,7 +16,7 @@ namespace BankManagementSystem
 
         public Current(string accountNumber) : base(accountNumber, AccountType.Current)
         {
-            TransactionList =new List<Transactions>();
+            TransactionList = new List<Transactions>();
         }
 
         public override void Deposit(decimal amount)
@@ -82,7 +82,7 @@ namespace BankManagementSystem
             }
         }
 
-        public void GetAccountStatement(string accounNumber)
+        public void GetAccountStatement(string accountNumber)
         {
             Console.WriteLine("\nACCOUNT STATEMENT ON ACCOUNT NO 0987654321");
             Console.WriteLine("+-------------------------------------------------------------------+");
@@ -91,14 +91,14 @@ namespace BankManagementSystem
 
             foreach (var item in TransactionList)
             {
-                if (item.Account.AccountNumber == accounNumber)
+                if (item.Account.AccountNumber == accountNumber)
                 {
                     Console.WriteLine($"| {item.Date} | {item.Type} | {item.Amount} | {item.Balance}");
                     Console.WriteLine("+-------------------------------------------------------------------+");
 
                 }
             }
-            //var transaction = TransactionList.Where(x => x.Equals(accounNumber)).FirstOrDefault();
+            //var transaction = TransactionList.Where(x => x.Equals(accountNumber)).FirstOrDefault();
             //Console.WriteLine($"| {transaction.Date} | {transaction.Type} | {transaction.Amount} | {transaction.Balance}");
         }
 

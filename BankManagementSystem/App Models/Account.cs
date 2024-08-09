@@ -11,7 +11,7 @@ namespace BankManagementSystem
     public abstract class Account
     {
        // private static int _AccountNumber = 1023847860;
-       
+        Customer customer = new Customer();
         public Customer AccountHolder { get; set; }
         public string AccountNumber { get; set; }
         public decimal Balance { get; set; }
@@ -47,7 +47,7 @@ namespace BankManagementSystem
             Console.WriteLine("+-------------------------------------------------------------------+");
             Console.WriteLine("|   FULL NAME\t  | ACCOUNT NUMBER | ACCOUNT TYPE | ACCOUNT BALANCE |");
             Console.WriteLine("+-------------------------------------------------------------------+");
-            foreach (var account in AccountHolder.Accounts)           
+            foreach (var account in customer.GetAccounts())           
             {
                 Console.WriteLine($"| {AccountHolder.Fullname} | {account.AccountNumber} {account.AccountType}t  | {account.Balance} |");
                 Console.WriteLine("+-------------------------------------------------------------------+");

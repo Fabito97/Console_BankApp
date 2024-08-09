@@ -21,7 +21,7 @@ namespace BankManagementSystem
 
         private List<Account> Accounts;
 
-
+        private List<Customer> CustomerList;
 
         public Customer() { }
         public Customer(string firstName, string lastName, string email, string password)
@@ -101,6 +101,25 @@ namespace BankManagementSystem
         {
             return Email.ToLower() == email.ToLower() && Password == password;
         }
-              
+
+        public void AddUser(Customer customer)
+        {
+            CustomerList.Add(customer);
+        }
+
+        public void CreateAccount(Account account)
+        {
+            Accounts.Add(account);
+        }
+             
+        public List<Customer> GetCustomers()
+        {
+            return CustomerList;
+        }
+
+        public List<Account> GetAccounts()
+        {
+            return Accounts;
+        }
     }
 }

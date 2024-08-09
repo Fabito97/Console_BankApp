@@ -13,9 +13,7 @@ namespace BankManagementSystem.Services
 {
     public class CustomerService
     {
-        
-        private List<Customer> CustomerList;
-        private List<Account> Accounts;
+        Customer customer = new Customer();
 
         public CustomerService()
         {
@@ -26,7 +24,7 @@ namespace BankManagementSystem.Services
         public void Registercustomer(string firstName, string lastName, string email, string password)
         {
             var newCustomer = new Customer(firstName, lastName, email, password);
-            CustomerList.Add(newCustomer);
+            customer.AddUser(newCustomer);
 
             Console.WriteLine("Customer registered successfully");
             Console.WriteLine($"Full Names: {newCustomer.FirstName} {newCustomer.LastName}");
@@ -52,13 +50,13 @@ namespace BankManagementSystem.Services
                 }
             }
 
-            Accounts.Add(newAccount);
+            customer.CreateAccount(newAccount);
             Console.WriteLine($"Account created successfully! Account Number: {newAccount.AccountNumber}, Account Type: {newAccount.AccountType}, Initial Balance: {newAccount.Balance:C}");                              
         }
 
         public Customer Login(string email, string password) 
         {
-            foreach (var customer in CustomerList)
+            foreach (var item in customer.GetCustomers())
             {
                 if (customer.Authenticate(email, password)) 
                 {

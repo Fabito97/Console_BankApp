@@ -79,12 +79,7 @@ namespace BankManagementSystem
             
 */
 
-        }
-       
-
-        public void RegisterCustomer()
-        {
-            
-        }
+        }      
+                
     }
 }
