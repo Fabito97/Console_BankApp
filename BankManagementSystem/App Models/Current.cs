@@ -14,9 +14,8 @@ namespace BankManagementSystem
         private List<Transactions> TransactionList;
            
 
-        public Current(Customer accountHolder) : base(accountHolder, AccountType.Current)
+        public Current(string accountNumber) : base(accountNumber, AccountType.Current)
         {
-            AccountNumber = GenerateAccountNumber();
             TransactionList =new List<Transactions>();
         }
 
@@ -62,9 +61,25 @@ namespace BankManagementSystem
         }
 
 
-        public override void Transfer(string Number, decimal amount)
+        public override void Transfer(Account targerAccount, decimal amount)
         {
-            
+            if (amount <= 0)
+            {
+                Console.WriteLine("\nInvalid Transaction. Amount must be a positive number");
+            }
+            else if (amount > Balance)
+            {
+                Console.WriteLine($"\ninsufficient Balance. Cannot withdraw N{amount}");
+            }
+            else if (amount <= Balance)
+            {
+                targerAccount.Balance += amount;
+
+                Console.WriteLine($"\nWithdrawal of N{amount} from your Current Account is successful. Your new balance is N{Balance}");
+
+                var withdraw = new Transactions(DateTime.Now, amount, TransactionType.Withdrawal, GetBalance());
+                TransactionList.Add(withdraw);
+            }
         }
 
         public void GetAccountStatement(string accounNumber)

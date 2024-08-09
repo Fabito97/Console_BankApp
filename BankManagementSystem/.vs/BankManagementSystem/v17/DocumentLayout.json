@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\FABIAN\\Desktop\\DecagonTask\\dg002-week4-task-Fabito97\\BankManagementSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FA3369C9-E36F-4CAE-A543-D4901254FDBB}|BankManagementSystem.csproj|c:\\users\\fabian\\desktop\\decagontask\\dg002-week4-task-fabito97\\bankmanagementsystem\\services\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA3369C9-E36F-4CAE-A543-D4901254FDBB}|BankManagementSystem.csproj|solutionrelative:services\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FA3369C9-E36F-4CAE-A543-D4901254FDBB}|BankManagementSystem.csproj|c:\\users\\fabian\\desktop\\decagontask\\dg002-week4-task-fabito97\\bankmanagementsystem\\ui\\appscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA3369C9-E36F-4CAE-A543-D4901254FDBB}|BankManagementSystem.csproj|solutionrelative:ui\\appscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FA3369C9-E36F-4CAE-A543-D4901254FDBB}|BankManagementSystem.csproj|c:\\users\\fabian\\desktop\\decagontask\\dg002-week4-task-fabito97\\bankmanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA3369C9-E36F-4CAE-A543-D4901254FDBB}|BankManagementSystem.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FA3369C9-E36F-4CAE-A543-D4901254FDBB}|BankManagementSystem.csproj|c:\\users\\fabian\\desktop\\decagontask\\dg002-week4-task-fabito97\\bankmanagementsystem\\app models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FA3369C9-E36F-4CAE-A543-D4901254FDBB}|BankManagementSystem.csproj|solutionrelative:app models\\account.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA3369C9-E36F-4CAE-A543-D4901254FDBB}|BankManagementSystem.csproj|c:\\users\\fabian\\desktop\\decagontask\\dg002-week4-task-fabito97\\bankmanagementsystem\\app models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA3369C9-E36F-4CAE-A543-D4901254FDBB}|BankManagementSystem.csproj|solutionrelative:app models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FA3369C9-E36F-4CAE-A543-D4901254FDBB}|BankManagementSystem.csproj|c:\\users\\fabian\\desktop\\decagontask\\dg002-week4-task-fabito97\\bankmanagementsystem\\app models\\current.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,20 +23,20 @@
       "RelativeMoniker": "D:0:0:{FA3369C9-E36F-4CAE-A543-D4901254FDBB}|BankManagementSystem.csproj|solutionrelative:app models\\saving.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FA3369C9-E36F-4CAE-A543-D4901254FDBB}|BankManagementSystem.csproj|c:\\users\\fabian\\desktop\\decagontask\\dg002-week4-task-fabito97\\bankmanagementsystem\\app models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA3369C9-E36F-4CAE-A543-D4901254FDBB}|BankManagementSystem.csproj|solutionrelative:app models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FA3369C9-E36F-4CAE-A543-D4901254FDBB}|BankManagementSystem.csproj|c:\\users\\fabian\\desktop\\decagontask\\dg002-week4-task-fabito97\\bankmanagementsystem\\app models\\transactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FA3369C9-E36F-4CAE-A543-D4901254FDBB}|BankManagementSystem.csproj|solutionrelative:app models\\transactions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FA3369C9-E36F-4CAE-A543-D4901254FDBB}|BankManagementSystem.csproj|c:\\users\\fabian\\desktop\\decagontask\\dg002-week4-task-fabito97\\bankmanagementsystem\\enums\\accounttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA3369C9-E36F-4CAE-A543-D4901254FDBB}|BankManagementSystem.csproj|solutionrelative:enums\\accounttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FA3369C9-E36F-4CAE-A543-D4901254FDBB}|BankManagementSystem.csproj|c:\\users\\fabian\\desktop\\decagontask\\dg002-week4-task-fabito97\\bankmanagementsystem\\ui\\appscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA3369C9-E36F-4CAE-A543-D4901254FDBB}|BankManagementSystem.csproj|solutionrelative:ui\\appscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FA3369C9-E36F-4CAE-A543-D4901254FDBB}|BankManagementSystem.csproj|c:\\users\\fabian\\desktop\\decagontask\\dg002-week4-task-fabito97\\bankmanagementsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FA3369C9-E36F-4CAE-A543-D4901254FDBB}|BankManagementSystem.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FA3369C9-E36F-4CAE-A543-D4901254FDBB}|BankManagementSystem.csproj|c:\\users\\fabian\\desktop\\decagontask\\dg002-week4-task-fabito97\\bankmanagementsystem\\services\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA3369C9-E36F-4CAE-A543-D4901254FDBB}|BankManagementSystem.csproj|solutionrelative:services\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA3369C9-E36F-4CAE-A543-D4901254FDBB}|BankManagementSystem.csproj|c:\\users\\fabian\\desktop\\decagontask\\dg002-week4-task-fabito97\\bankmanagementsystem\\enums\\accounttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA3369C9-E36F-4CAE-A543-D4901254FDBB}|BankManagementSystem.csproj|solutionrelative:enums\\accounttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,11 +46,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "AccountType.cs",
               "DocumentMoniker": "C:\\Users\\FABIAN\\Desktop\\DecagonTask\\dg002-week4-task-Fabito97\\BankManagementSystem\\Enums\\AccountType.cs",
               "RelativeDocumentMoniker": "Enums\\AccountType.cs",
@@ -58,25 +58,24 @@
               "RelativeToolTip": "Enums\\AccountType.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-09T01:46:39.128Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-09T01:46:39.128Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "CustomerService.cs",
               "DocumentMoniker": "C:\\Users\\FABIAN\\Desktop\\DecagonTask\\dg002-week4-task-Fabito97\\BankManagementSystem\\Services\\CustomerService.cs",
               "RelativeDocumentMoniker": "Services\\CustomerService.cs",
               "ToolTip": "C:\\Users\\FABIAN\\Desktop\\DecagonTask\\dg002-week4-task-Fabito97\\BankManagementSystem\\Services\\CustomerService.cs",
               "RelativeToolTip": "Services\\CustomerService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACkAAAAyAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAD4AAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-07T21:32:06.392Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "AppScreen.cs",
               "DocumentMoniker": "C:\\Users\\FABIAN\\Desktop\\DecagonTask\\dg002-week4-task-Fabito97\\BankManagementSystem\\UI\\AppScreen.cs",
               "RelativeDocumentMoniker": "UI\\AppScreen.cs",
@@ -89,7 +88,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "Transactions.cs",
               "DocumentMoniker": "C:\\Users\\FABIAN\\Desktop\\DecagonTask\\dg002-week4-task-Fabito97\\BankManagementSystem\\App Models\\Transactions.cs",
               "RelativeDocumentMoniker": "App Models\\Transactions.cs",
@@ -108,7 +107,7 @@
               "RelativeDocumentMoniker": "App Models\\Saving.cs",
               "ToolTip": "C:\\Users\\FABIAN\\Desktop\\DecagonTask\\dg002-week4-task-Fabito97\\BankManagementSystem\\App Models\\Saving.cs",
               "RelativeToolTip": "App Models\\Saving.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAxwBUAAAA3AAAA",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAkwBUAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-04T11:50:01.222Z",
               "EditorCaption": ""
@@ -121,46 +120,46 @@
               "RelativeDocumentMoniker": "App Models\\Current.cs",
               "ToolTip": "C:\\Users\\FABIAN\\Desktop\\DecagonTask\\dg002-week4-task-Fabito97\\BankManagementSystem\\App Models\\Current.cs",
               "RelativeToolTip": "App Models\\Current.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABEAAAAJAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEoAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-04T11:49:51.885Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "Customer.cs",
               "DocumentMoniker": "C:\\Users\\FABIAN\\Desktop\\DecagonTask\\dg002-week4-task-Fabito97\\BankManagementSystem\\App Models\\Customer.cs",
               "RelativeDocumentMoniker": "App Models\\Customer.cs",
               "ToolTip": "C:\\Users\\FABIAN\\Desktop\\DecagonTask\\dg002-week4-task-Fabito97\\BankManagementSystem\\App Models\\Customer.cs",
               "RelativeToolTip": "App Models\\Customer.cs",
-              "ViewState": "AQIAAFgAAAAAAAAAAAAqwGgAAAAAAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwBIAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-04T11:35:52.658Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Account.cs",
               "DocumentMoniker": "C:\\Users\\FABIAN\\Desktop\\DecagonTask\\dg002-week4-task-Fabito97\\BankManagementSystem\\App Models\\Account.cs",
               "RelativeDocumentMoniker": "App Models\\Account.cs",
               "ToolTip": "C:\\Users\\FABIAN\\Desktop\\DecagonTask\\dg002-week4-task-Fabito97\\BankManagementSystem\\App Models\\Account.cs",
               "RelativeToolTip": "App Models\\Account.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABIAAAAAAAAA",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABUAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-04T11:18:48.275Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\FABIAN\\Desktop\\DecagonTask\\dg002-week4-task-Fabito97\\BankManagementSystem\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Users\\FABIAN\\Desktop\\DecagonTask\\dg002-week4-task-Fabito97\\BankManagementSystem\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAQwDYAAAAMAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADYAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-04T11:18:14.628Z",
               "EditorCaption": ""

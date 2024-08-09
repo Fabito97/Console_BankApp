@@ -15,9 +15,8 @@ namespace BankManagementSystem
 
         public decimal MinBalance { get; }
 
-        public Saving(Customer accountHolder) : base(accountHolder, AccountType.Saving) 
+        public Saving(string accountNumber) : base(accountNumber, AccountType.Saving) 
         {
-            AccountNumber = GenerateAccountNumber();
             MinBalance = 1000m;
             TransactionList = new List<Transactions>();
         }              

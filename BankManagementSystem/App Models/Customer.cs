@@ -19,7 +19,7 @@ namespace BankManagementSystem
         public string Email {  get; set; }
         public string Password { get; set; }
 
-        public List<Account> Accounts;
+        private List<Account> Accounts;
 
 
 
@@ -101,11 +101,6 @@ namespace BankManagementSystem
         {
             return Email.ToLower() == email.ToLower() && Password == password;
         }
-
-
-       public void CreateAccount(Account account)
-        {
-            Accounts.Add(account);
-        }         
+              
     }
 }

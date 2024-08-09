@@ -15,11 +15,11 @@ namespace BankManagementSystem.Services
     {
         
         private List<Customer> CustomerList;
-
+        private List<Account> Accounts;
 
         public CustomerService()
         {
-            CustomerList = new List<Customer>();
+            
         }
                
 
@@ -27,30 +27,33 @@ namespace BankManagementSystem.Services
         {
             var newCustomer = new Customer(firstName, lastName, email, password);
             CustomerList.Add(newCustomer);
-          
+
             Console.WriteLine("Customer registered successfully");
             Console.WriteLine($"Full Names: {newCustomer.FirstName} {newCustomer.LastName}");
             Console.WriteLine($"Email: {newCustomer.Email}");
         }
 
-        public void CreateAccount(AccountType accountype)
+        public void CreateAccount(Customer customer, AccountType accountype)
         {          
              Account newAccount = null;
 
-            if (accountype == AccountType.Current)
+            string acctno = Account.GenerateAccountNumber();
+
+            if (customer != null )
             {
-            newAccount = new Current(AccountType);
+                if (accountype == AccountType.Current)
+                {
+                    newAccount = new Current(acctno);
                 
-            }
-            else
-            {
-            newAccount = new Saving(accountHolder);
+                }
+                else
+                {
+                    newAccount = new Saving(acctno);
+                }
             }
 
-            Customer.Add(newAccount);
-            Console.WriteLine($"Account created successfully! Account Number: {newAccount.AccountNumber}, Account Type: {newAccount.AccountType}, Initial Balance: {newAccount.Balance:C}");
-            
-
+            Accounts.Add(newAccount);
+            Console.WriteLine($"Account created successfully! Account Number: {newAccount.AccountNumber}, Account Type: {newAccount.AccountType}, Initial Balance: {newAccount.Balance:C}");                              
         }
 
         public Customer Login(string email, string password) 

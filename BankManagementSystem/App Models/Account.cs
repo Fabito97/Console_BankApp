@@ -17,9 +17,9 @@ namespace BankManagementSystem
         public decimal Balance { get; set; }
         public AccountType AccountType { get; set; }
 
-        public Account(Customer accountHolder, AccountType accountType) 
+        public Account(string accountNumber, AccountType accountType) 
         {
-            AccountHolder = accountHolder;
+            AccountNumber = accountNumber;
             AccountType = accountType; 
             Balance = 0;
         }
@@ -28,7 +28,7 @@ namespace BankManagementSystem
 
         public abstract void Deposit(decimal amount);
         public abstract void Withdraw(decimal amount);
-        public abstract void Transfer(string account, decimal amount);
+        public abstract void Transfer(Account account, decimal amount);
 
         public  decimal GetBalance()
         {
