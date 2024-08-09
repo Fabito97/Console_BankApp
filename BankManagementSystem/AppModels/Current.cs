@@ -11,10 +11,10 @@ namespace BankManagementSystem
 {
     public class Current : Account
     {
-        private List<Transactions> TransactionList;
-           
+        public List<Transactions> TransactionList;           
 
-        public Current(string accountNumber) : base(accountNumber, AccountType.Current)
+        public Current(string accountNumber, string accountName, AccountType accountType,decimal initialBalance) : 
+            base(accountNumber, accountName, AccountType.Current, initialBalance)
         {
             TransactionList = new List<Transactions>();
         }
@@ -61,7 +61,7 @@ namespace BankManagementSystem
         }
 
 
-        public override void Transfer(Account targerAccount, decimal amount)
+        public override void Transfer(Account targetAccount, decimal amount)
         {
             if (amount <= 0)
             {
@@ -73,9 +73,9 @@ namespace BankManagementSystem
             }
             else if (amount <= Balance)
             {
-                targerAccount.Balance += amount;
+                targetAccount.Balance += amount;
 
-                Console.WriteLine($"\nWithdrawal of N{amount} from your Current Account is successful. Your new balance is N{Balance}");
+                Console.WriteLine($"\nTransfer of N{amount} from your Current Account is successful. Your new balance is N{Balance}");
 
                 var withdraw = new Transactions(DateTime.Now, amount, TransactionType.Withdrawal, GetBalance());
                 TransactionList.Add(withdraw);

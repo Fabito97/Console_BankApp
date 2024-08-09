@@ -19,19 +19,22 @@ namespace BankManagementSystem
         public string Email {  get; set; }
         public string Password { get; set; }
 
-        private List<Account> Accounts;
+        public List<Account> Accounts;
 
         private List<Customer> CustomerList;
 
-        public Customer() { }
+        public Customer() 
+        {
+            Accounts = new List<Account>();
+            CustomerList = new List<Customer>();
+        }
         public Customer(string firstName, string lastName, string email, string password)
         {
             FirstName = firstName;
             LastName = lastName;
             Email = email;
             Fullname = FirstName + " " + LastName;
-            Password = string.Empty;
-            Accounts = new List<Account>();            
+            Password = string.Empty;            
         }
 
 
@@ -48,8 +51,7 @@ namespace BankManagementSystem
         }
 
         public string SetLastName(string lastName)
-        {
-            
+        {            
             
             while (lastName == null || char.IsLower(lastName[0]) || char.IsNumber(lastName[0]))
             {                
@@ -59,57 +61,23 @@ namespace BankManagementSystem
             }
             return FirstName = lastName;
         }
-                
+                     
 
-        private bool IsValidEmail(string email)
+        public void AddCustomer(Customer customer)
         {
-            string validPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
-            return Regex.IsMatch(email, validPattern);
-        }
-
-        public string SetEmail(string email)
-        {
-            while (!IsValidEmail(email))
-            { 
-                Console.WriteLine("Invalid email format.");
-                Console.WriteLine("\nEnter your first Name");
-                email = Console.ReadLine();
+            if (customer == null)
+            {
+                throw new ArgumentNullException("Customer cannot be null");
             }
-            return Email = email;
-        }
 
-        private bool IsValidPassword(string password)
-        {
-            string pattern = @"^(?=.*[A-Z])(?=.*[@#$%^&!]).{6,}$";
-            return Regex.IsMatch(password, pattern);
-        }
-
-        public string SetPassword(string password)
-        {            
-            while(!IsValidPassword(password))
-            {               
-               Console.WriteLine("Password must be at least 6 characters long, contain an uppercase letter, and include a special character.");
-               Console.WriteLine("\nEnter your first Name");
-               password = Console.ReadLine();
-            }
-            return Password = password;
-        }
-
-       
-
-        public bool Authenticate(string email, string password)
-        {
-            return Email.ToLower() == email.ToLower() && Password == password;
-        }
-
-        public void AddUser(Customer customer)
-        {
             CustomerList.Add(customer);
+
         }
 
         public void CreateAccount(Account account)
         {
             Accounts.Add(account);
+
         }
              
         public List<Customer> GetCustomers()

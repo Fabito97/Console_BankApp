@@ -10,21 +10,19 @@ namespace BankManagementSystem
 {
     public abstract class Account
     {
-       // private static int _AccountNumber = 1023847860;
         Customer customer = new Customer();
-        public Customer AccountHolder { get; set; }
+        public string AccountHolder { get; set; }
         public string AccountNumber { get; set; }
         public decimal Balance { get; set; }
         public AccountType AccountType { get; set; }
 
-        public Account(string accountNumber, AccountType accountType) 
+        public Account(string accountNumber, string accountName, AccountType accountType, decimal initialBalance) 
         {
+            AccountHolder = accountName;
             AccountNumber = accountNumber;
             AccountType = accountType; 
-            Balance = 0;
-        }
-
-        //public abstract void GetAccountType();
+            Balance = initialBalance;
+        }       
 
         public abstract void Deposit(decimal amount);
         public abstract void Withdraw(decimal amount);
@@ -41,19 +39,7 @@ namespace BankManagementSystem
             var accountNumber = rnd.NextInt64(0000000000, 9999999999);
             return accountNumber.ToString();
         }
-        public void GetAccountDetails()
-        {
-            Console.WriteLine("\nACCOUNT DETAILS");
-            Console.WriteLine("+-------------------------------------------------------------------+");
-            Console.WriteLine("|   FULL NAME\t  | ACCOUNT NUMBER | ACCOUNT TYPE | ACCOUNT BALANCE |");
-            Console.WriteLine("+-------------------------------------------------------------------+");
-            foreach (var account in customer.GetAccounts())           
-            {
-                Console.WriteLine($"| {AccountHolder.Fullname} | {account.AccountNumber} {account.AccountType}t  | {account.Balance} |");
-                Console.WriteLine("+-------------------------------------------------------------------+");
-            }
-           
-        }      
+       
                
     }
 }

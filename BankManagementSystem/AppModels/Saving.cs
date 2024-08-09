@@ -15,9 +15,10 @@ namespace BankManagementSystem
 
         public decimal MinBalance { get; }
 
-        public Saving(string accountNumber) : base(accountNumber, AccountType.Saving) 
+        public Saving(string accountNumber, string accountName, AccountType accountType, decimal minbalance = 1000m) : 
+            base(accountNumber, accountName, AccountType.Saving, minbalance) 
         {
-            MinBalance = 1000m;
+            MinBalance = minbalance;
             TransactionList = new List<Transactions>();
         }              
 
@@ -64,24 +65,28 @@ namespace BankManagementSystem
             
         }
 
-        public override void Transfer(string selectedAccount, decimal amount)
+        public override void Transfer(Account targetAccount, decimal amount)
         {
-            if (selectedAccount != null)
+            if (amount <= 0)
             {
-                if (amount > 0 && amount > Balance)
-                {
-                    Balance -= amount;
-                    /*selectedAccount. += amount;
-                    Console.WriteLine($"Your transfer of N{amount} to {selectedAccount.Fullname} is successful. Your new balance is {Balance}");*/
-
-                    var transfer = new Transactions(DateTime.Now, amount, TransactionType.Transfer, GetBalance());
-                    TransactionList.Add(transfer);
-                }
+                Console.WriteLine("\nInvalid Transaction. Amount must be a positive number");
             }
-            Console.WriteLine("Account could not be found");
+            else if (amount > Balance - MinBalance)
+            {
+                Console.WriteLine($"\ninsufficient Balance. Cannot withdraw N{amount}");
+            }
+            else 
+            {
+                targetAccount.Balance += amount;
+
+                Console.WriteLine($"\nTransfer of N{amount} from your Saving Account is successful. Your new balance is N{Balance}");
+
+                var withdraw = new Transactions(DateTime.Now, amount, TransactionType.Withdrawal, GetBalance());
+                TransactionList.Add(withdraw);
+            }
         }
 
-        public void GetAccountStatement(string accounNumber)
+        public void GetAccountStatement(string accountNumber)
         {
             Console.WriteLine("\nACCOUNT STATEMENT ON ACCOUNT NO 0987654321");
             Console.WriteLine("+-------------------------------------------------------------------+");
@@ -90,7 +95,7 @@ namespace BankManagementSystem
            
             foreach (var item in TransactionList)
             {
-                if (item.Account.AccountNumber == accounNumber)
+                if (item.Account.AccountNumber == accountNumber)
                 {
                     Console.WriteLine($"| {item.Date} | {item.Type} | {item.Amount} | {item.Balance}");
                     Console.WriteLine("+-------------------------------------------------------------------+");
@@ -102,12 +107,7 @@ namespace BankManagementSystem
         }
 
 
-        /* public override void GetAccountDetails()
-         {                      
-             Console.WriteLine($"| {AccountHolder.Fullname} | {AccountNumber}\t   | {AccountType}\t  | {Balance}\t    |");
-             Console.WriteLine("+-------------------------------------------------------------------+");
-         }*/
-
+        
 
 
 
