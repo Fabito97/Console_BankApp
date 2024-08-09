@@ -78,12 +78,12 @@ namespace BankManagementSystem.Services
 
             if (accountType == AccountType.Current) 
             {
-                 newAccount = new Current(acctno, accountName,AccountType.Current, 0);       
+                 newAccount = new Current(acctno, accountName,100);       
                                
             }
             else
             {
-                 newAccount = new Saving(acctno, accountName,AccountType.Saving, 1000);
+                 newAccount = new Saving(acctno, accountName, 1000);
             }
 
             customer.CreateAccount(newAccount);
@@ -115,9 +115,9 @@ namespace BankManagementSystem.Services
             {
                 foreach (var account in customer.Accounts)
                 {
-                    if (account.AccountHolder == customer.Fullname)
+                    if (account.AccountName == customerName)
                     {
-                        Console.WriteLine($"| {account.AccountHolder} | {account.AccountNumber} {account.AccountType}t  | {account.Balance} |");
+                        Console.WriteLine($"| {account.AccountName} | {account.AccountNumber} {account.AccountType}t  | {account.Balance} |");
                         Console.WriteLine("+-------------------------------------------------------------------+");
                     }
                     Console.WriteLine("No account found");

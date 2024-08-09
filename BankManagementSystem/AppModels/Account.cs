@@ -10,15 +10,15 @@ namespace BankManagementSystem
 {
     public abstract class Account
     {
-        Customer customer = new Customer();
-        public string AccountHolder { get; set; }
+       // Customer customer = new Customer();
+        public string AccountName { get; set; }
         public string AccountNumber { get; set; }
         public decimal Balance { get; set; }
         public AccountType AccountType { get; set; }
 
         public Account(string accountNumber, string accountName, AccountType accountType, decimal initialBalance) 
         {
-            AccountHolder = accountName;
+            AccountName = accountName;
             AccountNumber = accountNumber;
             AccountType = accountType; 
             Balance = initialBalance;

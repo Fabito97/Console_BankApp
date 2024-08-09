@@ -13,7 +13,7 @@ namespace BankManagementSystem
     {
         public List<Transactions> TransactionList;           
 
-        public Current(string accountNumber, string accountName, AccountType accountType,decimal initialBalance) : 
+        public Current(string accountNumber, string accountName, decimal initialBalance) : 
             base(accountNumber, accountName, AccountType.Current, initialBalance)
         {
             TransactionList = new List<Transactions>();
