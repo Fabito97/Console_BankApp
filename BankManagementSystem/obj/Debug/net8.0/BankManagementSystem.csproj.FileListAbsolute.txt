@@ -1,0 +1,15 @@
+C:\Users\FABIAN\Desktop\DecagonTask\dg002-week4-task-Fabito97\BankManagementSystem\bin\Debug\net8.0\BankManagementSystem.exe
+C:\Users\FABIAN\Desktop\DecagonTask\dg002-week4-task-Fabito97\BankManagementSystem\bin\Debug\net8.0\BankManagementSystem.deps.json
+C:\Users\FABIAN\Desktop\DecagonTask\dg002-week4-task-Fabito97\BankManagementSystem\bin\Debug\net8.0\BankManagementSystem.runtimeconfig.json
+C:\Users\FABIAN\Desktop\DecagonTask\dg002-week4-task-Fabito97\BankManagementSystem\bin\Debug\net8.0\BankManagementSystem.dll
+C:\Users\FABIAN\Desktop\DecagonTask\dg002-week4-task-Fabito97\BankManagementSystem\bin\Debug\net8.0\BankManagementSystem.pdb
+C:\Users\FABIAN\Desktop\DecagonTask\dg002-week4-task-Fabito97\BankManagementSystem\obj\Debug\net8.0\BankManagementSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\FABIAN\Desktop\DecagonTask\dg002-week4-task-Fabito97\BankManagementSystem\obj\Debug\net8.0\BankManagementSystem.AssemblyInfoInputs.cache
+C:\Users\FABIAN\Desktop\DecagonTask\dg002-week4-task-Fabito97\BankManagementSystem\obj\Debug\net8.0\BankManagementSystem.AssemblyInfo.cs
+C:\Users\FABIAN\Desktop\DecagonTask\dg002-week4-task-Fabito97\BankManagementSystem\obj\Debug\net8.0\BankManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\FABIAN\Desktop\DecagonTask\dg002-week4-task-Fabito97\BankManagementSystem\obj\Debug\net8.0\BankManagementSystem.sourcelink.json
+C:\Users\FABIAN\Desktop\DecagonTask\dg002-week4-task-Fabito97\BankManagementSystem\obj\Debug\net8.0\BankManagementSystem.dll
+C:\Users\FABIAN\Desktop\DecagonTask\dg002-week4-task-Fabito97\BankManagementSystem\obj\Debug\net8.0\refint\BankManagementSystem.dll
+C:\Users\FABIAN\Desktop\DecagonTask\dg002-week4-task-Fabito97\BankManagementSystem\obj\Debug\net8.0\BankManagementSystem.pdb
+C:\Users\FABIAN\Desktop\DecagonTask\dg002-week4-task-Fabito97\BankManagementSystem\obj\Debug\net8.0\BankManagementSystem.genruntimeconfig.cache
+C:\Users\FABIAN\Desktop\DecagonTask\dg002-week4-task-Fabito97\BankManagementSystem\obj\Debug\net8.0\ref\BankManagementSystem.dll
