@@ -9,8 +9,8 @@ namespace BankManagementSystem.Enums
     public enum AccountType
     {
         
-        Saving = 1,
-        Current = 2
+        Saving=1,
+        Current=2
         
     }
 }

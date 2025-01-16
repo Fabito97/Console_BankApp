@@ -1,5 +1,9 @@
-﻿using BankManagementSystem.App;
+﻿using BankManagementSystem.AppModels;
+using BankManagementSystem.Data;
 using BankManagementSystem.Enums;
+using BankManagementSystem.UI;
+using BankManagementSystem.Validators;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,118 +18,100 @@ namespace BankManagementSystem.Services
 {
     public class CustomerService
     {
-        Customer customer = new Customer();
+        private readonly string _filePath;
+        public CustomerService() { }
 
-        public CustomerService()
+        public CustomerService(string path)
         {
-            
-        }
 
-        private bool IsValidEmail(string email)
-        {
-            string validPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
-            return Regex.IsMatch(email, validPattern);
-        }
+            _filePath = path;
 
-        public string SetEmail(string email)
-        {
-            while (!IsValidEmail(email))
+            if (!File.Exists(_filePath))
             {
-                Console.WriteLine("Invalid email format.");
-                Console.WriteLine("\nEnter your first Name");
-                email = Console.ReadLine();
+                Directory.CreateDirectory(Path.GetDirectoryName(_filePath));
+                File.WriteAllText(_filePath, "[]");
             }
-            return customer.Email = email;
         }
 
-        private bool IsValidPassword(string password)
-        {
-            string pattern = @"^(?=.*[A-Z])(?=.*[@#$%^&!]).{6,}$";
-            return Regex.IsMatch(password, pattern);
-        }
 
-        public string SetPassword(string password)
+
+
+		public void AddCustomerToFile(Customer customer)
         {
-            while (!IsValidPassword(password))
+            try
             {
-                Console.WriteLine("Password must be at least 6 characters long, contain an uppercase letter, and include a special character.");
-                Console.WriteLine("\nEnter your first Name");
-                password = Console.ReadLine();
+                var customers = new List<Customer>();
+
+                var jsonData = File.ReadAllText(_filePath);
+                customers = JsonConvert.DeserializeObject<List<Customer>>(jsonData) ?? new List<Customer>();
+
+                customers.Add(customer);
+
+                try
+                {
+                    string updatedJson = JsonConvert.SerializeObject(customers, Formatting.Indented);
+                    File.WriteAllText(_filePath, updatedJson);
+
+                    Utitily.PrintMessage("Customer registration successfully");
+
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+
             }
-            return customer.Password = password;
-        }
-
-        public bool Authenticate(string email, string password)
-        {
-            return customer.Email.ToLower() == email.ToLower() && customer.Password == password;
-        }
-
-        public void Registercustomer(string firstName, string lastName, string email, string password)
-        {
-            Customer newCustomer = new Customer(firstName, lastName, email, password);
-            customer.AddCustomer(newCustomer);
-
-            Console.WriteLine("Customer registered successfully");
-            Console.WriteLine($"Full Names: {newCustomer.FirstName} {newCustomer.LastName}");
-            Console.WriteLine($"Email: {newCustomer.Email}");
-        }
-
-        public void CreateAccount(string accountNumber, string accountName, AccountType accountType) 
-        {
-            Account newAccount = null;
-            accountName = customer.Fullname;
-            string acctno = Account.GenerateAccountNumber();
-
-            if (accountType == AccountType.Current) 
+            catch (Exception ex)
             {
-                 newAccount = new Current(acctno, accountName,100);       
-                               
+                throw new Exception(ex.Message);
             }
+
+        }
+
+        
+        public static List<Customer> GetCustomers()
+        {
+            try
+            {                            
+                var customers = new List<Customer>();
+
+
+                if (File.Exists(FilePath.Customer))  
+                {
+                    var jsonData = File.ReadAllText(FilePath.Customer);
+                    customers = JsonConvert.DeserializeObject<List<Customer>>(jsonData) ?? new List<Customer>();
+                }
+                return customers;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+        }
+
+        public void PrintAllCustomers()
+        {
+            var customers = GetCustomers();
+
+            if (customers == null)
+            {
+
+                Console.WriteLine("No customer yet");
+            }
+
             else
             {
-                 newAccount = new Saving(acctno, accountName, 1000);
-            }
-
-            customer.CreateAccount(newAccount);
-            Console.WriteLine($"Account created successfully! Account Number: {newAccount.AccountNumber}, Account Type: {newAccount.AccountType}, Initial Balance: {newAccount.Balance}");                              
-        }
-
-        public Customer Login(string email, string password) 
-        {
-            foreach (var item in customer.GetCustomers())
-            {
-                if (Authenticate(email, password)) 
+                Console.WriteLine("Name \t | Email \t | ");
+                foreach (Customer customer in customers)
                 {
-                    Console.WriteLine("Login Successful");
-                        return customer;
+
+                    Console.WriteLine($"{customer.FullName} | {customer.Email} ");
                 }
+
             }
-            Console.WriteLine("Invalid email or password.");
-            return null;
+
         }
 
-        public void GetAccountDetails(string customerName)
-        {
-            Console.WriteLine("\nACCOUNT DETAILS");
-            Console.WriteLine("+-------------------------------------------------------------------+");
-            Console.WriteLine("|   FULL NAME\t  | ACCOUNT NUMBER | ACCOUNT TYPE | ACCOUNT BALANCE |");
-            Console.WriteLine("+-------------------------------------------------------------------+");
-
-            if (customer.Accounts.Count < 1)
-            {
-                foreach (var account in customer.Accounts)
-                {
-                    if (account.AccountName == customerName)
-                    {
-                        Console.WriteLine($"| {account.AccountName} | {account.AccountNumber} {account.AccountType}t  | {account.Balance} |");
-                        Console.WriteLine("+-------------------------------------------------------------------+");
-                    }
-                    Console.WriteLine("No account found");
-
-                }
-            }
-            Console.WriteLine("Account List is empty");
-
-        }
     }
 }

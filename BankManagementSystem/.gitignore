@@ -1,0 +1,50 @@
+# Ignore Visual Studio and VS Code files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Ignore build outputs
+bin/
+obj/
+
+# Ignore dependencies (if using NuGet restore)
+*.nuget
+*.nupkg
+*.nuspec
+packages/
+project.lock.json
+project.assets.json
+
+# Ignore temporary and cache files
+*.tmp
+*.cache
+*.dbmdl
+*.jfm
+*.bak
+*.ldb
+*.log
+logs/
+
+# Ignore compiled DLLs and EXEs
+*.dll
+*.exe
+*.pdb
+
+# Ignore generated JSON & XML files
+*.deps.json
+*.runtimeconfig.json
+
+# Ignore database and data files (if any)
+*.mdf
+*.ldf
+*.sqlite
+*.db
+
+# Ignore User Secrets
+secrets.json
+
+# Ignore Rider & JetBrains files
+.idea/
+*.dotSettings.user
