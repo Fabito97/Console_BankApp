@@ -80,7 +80,7 @@ namespace BankManagementSystem.Services
             }
             else
             {
-                 accountNumber = AppScreen.GetSelectedAccountNumber(customerAccounts);
+                 accountNumber = Utitily.GetSelectedAccountNumber(customerAccounts);
             }
 
             var transactionAccount = customerAccounts.FirstOrDefault(x => x.AccountNumber == accountNumber);
