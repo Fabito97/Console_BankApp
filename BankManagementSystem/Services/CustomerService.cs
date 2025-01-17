@@ -34,8 +34,6 @@ namespace BankManagementSystem.Services
         }
 
 
-
-
 		public void AddCustomerToFile(Customer customer)
         {
             try
@@ -67,7 +65,6 @@ namespace BankManagementSystem.Services
             }
 
         }
-
         
         public static List<Customer> GetCustomers()
         {

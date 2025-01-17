@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BankManagementSystem.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -76,9 +77,96 @@ namespace BankManagementSystem.UI
         
         }
 
-        /*public static void PressExitToContinue()
-        {
-            Environment.Exit(0);
-        }*/
-    }
+		public static Account GetAccountSelectionType(string customerName, Guid customerId)
+		{
+			while (true)
+			{
+
+				Console.WriteLine("1. Current Account");
+				Console.WriteLine("2. Saving Account");
+				Console.WriteLine();
+
+				string input = Utitily.GetUserInput("the type account you wish to open");
+
+				if (input == "1")
+				{
+					return new Current(customerId, customerName, GenerateAccountNumber(), AccountType.Current, 0);
+
+				}
+				else if (input == "2")
+				{
+					return new Saving(customerId, customerName, GenerateAccountNumber(), AccountType.Current, 0);
+				}
+
+				PrintMessage("Invalid input, please try again", false);
+
+				PressEnterToContinue();
+
+			}
+
+		}
+
+		public static decimal ConvertAmountInput()
+		{
+			string amount;
+
+			while (true)
+			{
+				amount = Utitily.GetUserInput("the amount you wish to deposit");
+				Console.WriteLine();
+
+				if (int.TryParse(amount, out int ValidAmount))
+				{
+					break;
+				}
+				else
+				{
+					Utitily.PrintMessage("Invalld input, please enter a valid amount\n", false);
+				}
+			}
+
+			return Convert.ToDecimal(amount);
+		}
+
+		public static string GetSelectedAccountNumber(List<Account> customerAccounts)
+		{
+
+			if (customerAccounts.Count == 1)
+			{
+				return customerAccounts[0].AccountNumber;
+			}
+
+			int selectedOption;
+
+			do
+			{
+				Console.WriteLine("---------SELECT AN ACCOUNT---------\n");
+
+				int n = customerAccounts.Count;
+
+				for (int i = 0; i < n; i++)
+				{
+					Console.WriteLine($"{i + 1}. {customerAccounts[i].AccountType} - {customerAccounts[i].AccountNumber}");
+				}
+				Console.WriteLine();
+
+				var input = Utitily.GetUserInput("an option to proceed");
+
+				if (int.TryParse(input, out selectedOption) && selectedOption >= 1 && selectedOption <= n)
+				{
+					break;
+				}
+
+				Utitily.PrintMessage("\nInvalid option, please try again", false);
+
+				Utitily.PressEnterToContinue();
+				Console.Clear();
+
+			} while (true);
+
+			return customerAccounts[selectedOption - 1].AccountNumber;
+
+		}
+
+	}
 }

@@ -28,22 +28,7 @@ namespace BankManagementSystem
             Email = email;
             Password = password;
         }           
+          
 
-      
-
-
-
-            /*foreach (var item in accountService.AccountList)
-            {
-                if (customer.FullName == item.AccountName)
-                {
-                    Console.WriteLine($"\t\t\t\t\t\t{item.AccountType} - {item.AccountNumber} - Balance: {item.Balance}\n");
-                }
-                else
-                {
-                    Console.WriteLine($"\t\t\t\t\t- No account Yet");
-                }
-            }*/
-        
     }
 }

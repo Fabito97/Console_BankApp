@@ -32,7 +32,6 @@ namespace BankManagementSystem.Services
 			return accountNumber.NextInt64(1000000000, 9999999999).ToString();
 		}
 
-
 		public static void CreateAccount(List<Account> customerAccounts, Customer loggedInCustomer)
         {
 
@@ -44,7 +43,7 @@ namespace BankManagementSystem.Services
 
             Console.WriteLine("-------------------CREATE A NEW ACCOUNT-------------------\n");
 
-            Account newAccount = GetAccountSelectionType(loggedInCustomer.FullName, loggedInCustomer.Id);
+            Account newAccount = Utitily.GetAccountSelectionType(loggedInCustomer.FullName, loggedInCustomer.Id);
 
             new AccountService(FilePath.Account).AddAccountToFile(newAccount);
 
@@ -61,36 +60,7 @@ namespace BankManagementSystem.Services
             Utitily.PressEnterToContinue();
             Console.Clear();
         }
-
-        private static Account GetAccountSelectionType(string customerName, Guid customerId)
-        {
-            while (true)
-            {
-
-                Console.WriteLine("1. Current Account");
-                Console.WriteLine("2. Saving Account");
-                Console.WriteLine();
-
-                string input = Utitily.GetUserInput("the type account you wish to open");
-
-                if (input == "1")
-                {
-                    return new Current(customerId, customerName, GenerateAccountNumber(), AccountType.Current, 0);                     
-
-                }
-                else if (input == "2")
-                {
-                    return new Saving(customerId, customerName, GenerateAccountNumber(), AccountType.Current, 0);
-                }
-               
-                Utitily.PrintMessage("Invalid input, please try again", false);
-
-                Utitily.PressEnterToContinue();
-               
-            }
-
-        }
-
+              
         public void AddAccountToFile(Account account)
         {
             try
@@ -135,18 +105,6 @@ namespace BankManagementSystem.Services
             }
         }
 
-        public static List<Account> GetAccounts()
-        {  
-            var accounts = new List<Account>();
-
-            if (File.Exists(FilePath.Account))
-            {
-                var jsonData = File.ReadAllText(FilePath.Account);
-                accounts = JsonConvert.DeserializeObject<List<Account>>(jsonData) ?? new List<Account>();
-            }
-            return accounts;
-        }
-
         public static void GetAccountDetails(List<Account> customerAccounts)
         {
 
@@ -171,6 +129,18 @@ namespace BankManagementSystem.Services
             Utitily.PressEnterToContinue();
             Console.Clear();
 
+        }
+
+        public static List<Account> GetAccounts()
+        {  
+            var accounts = new List<Account>();
+
+            if (File.Exists(FilePath.Account))
+            {
+                var jsonData = File.ReadAllText(FilePath.Account);
+                accounts = JsonConvert.DeserializeObject<List<Account>>(jsonData) ?? new List<Account>();
+            }
+            return accounts;
         }
 
         public string PrintAllAccounts()
