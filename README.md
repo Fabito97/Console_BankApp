@@ -55,10 +55,6 @@ The **Bank Management System** is a console-based application built with **C#** 
 - Introduce **authentication with hashing** for improved security.
 - Implement **interest calculation** for savings accounts.
 
-## License
-
-This project is open-source and available under the **MIT License**.
-
 ## Author
 
 **Fabian**\
